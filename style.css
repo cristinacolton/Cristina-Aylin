@@ -1,0 +1,424 @@
+/* UTILITIES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   @font-face {
+    font-family: 'dream';
+    src: url('Fonts/NOCTADO.otf') format('opentype');}
+
+   body {
+    font-family: 'dream', serif;
+    color: rgb(57, 42, 72);
+    background-image: url("images/Light_Marble_Design.jpg")
+   }
+   .background {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    line-height: 1.6;
+    margin: 0;
+}
+
+   a {
+    text-decoration: none;
+   }
+
+h1 {
+    font-size: 38px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+li {
+    float: left;
+}
+
+h2 {
+    font-size: 1.85em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 18px;
+    position: relative;
+}
+
+
+
+/* NAVBAR STYLING STARTS */
+    .navbar {
+    padding: 20px;
+    background-image: url("images/Light_Marble_Design.jpg");
+  
+    color: rgb(57, 42, 72);
+    position: sticky;
+      /* make it stick */
+      position: sticky;
+      position: -webkit-sticky;
+      top: 0;
+      /* in front of all other elements */
+      z-index: 99;
+      /* set background */
+      background-color: #e4dbd2;
+      padding: 5px 5%;
+      border-bottom: 3px solid rgb(57, 42, 72);
+  
+      /* define flex */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   .nav-links a {
+    color: rgb(57, 42, 72);
+   }
+
+   /* LOGO */
+   .logo {
+    font-size: 42px;
+    text-transform: uppercase;
+    color: rgb(57, 42, 72);
+   }
+
+   /* NAVBAR MENU */
+   .menu {
+    list-style-type: none;
+    gap: 1em;
+    font-size: 18px;
+   }
+   .menu, .nav-links {
+       display: inline-block;
+       padding: 30px 10px;
+   }
+
+   .menu li:hover {
+    transition: 0.3s ease;
+   }
+   .menu li {
+    padding: 5px 14px;
+   }
+
+    /*RESPONSIVE NAVBAR MENU STARTS*/
+
+    /* CHECKBOX HACK */
+    input[type=checkbox]{
+    display: none;
+   } 
+   /*HAMBURGER MENU*/
+   .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+   }
+
+   /* APPLYING MEDIA QUERIES */
+
+    @media (max-width: 768px) {
+    li {
+    float: none;
+    }
+
+    .menu { 
+    display: none;
+    position: absolute;
+    background-color:rgb(255, 255, 255);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    top: 0px;
+   }
+
+   .menu li:hover {
+    display: inline-block;
+    background-color:rgba(179, 68, 108, 0.877);
+    transition: 0.3s ease;
+    border-radius: 5px;
+   }
+
+   .menu li + li {
+    margin-top: 12px;
+   }
+
+   body::before {
+    display:block;
+    content: '';
+    }
+
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+
+   .hamburger {
+    display: block;
+   }
+
+   }
+    
+   /* Underline Nav Bar */
+
+a.middle
+{
+    position: relative;
+}
+
+a.middle:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(57, 42, 72);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a.middle:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+    color: (87, 54, 16);
+  }
+
+img {
+width: 100%;
+height: 100vh;
+object-fit: cover;
+overflow: auto;
+display: block;
+position: relative;
+  }
+
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Blog Stying Starts Here */
+
+
+  /* Add a gray background color with some padding */
+  .blog {
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+
+/* Video Stying Starts Here */
+
+.video-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 560px) {
+    .video-container {
+        position: relative;
+        top: 50%;
+    }
+
+    .think-us-through, .gotta-choose-me {
+        position: relative; 
+        padding-bottom: 56.25%; 
+        padding-top: 30px; 
+        height: 0; 
+        overflow: hidden; 
+    }
+    
+    .think-us-through iframe, .gotta-choose-me iframe, 
+    .gotta-choose-me object, .think-us-through object, 
+    .gotta-choose-me embed, .think-us-through embed { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        width: 100%; 
+        height: 100%; 
+    }
+
+  }
+
+/* Photo Gallery Starts Here */
+  .header {
+    text-align: center;
+    padding: 32px;
+  }
+  
+  .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%;
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+
+
+  /* Mail Chimp Form */
+
+  #mc_embed_signup form {display:block; position:relative; text-align:left; margin: 20px}
+#mc_embed_signup h2 {font-weight:bold; padding:0; margin:15px 0; font-size:1.4em;}
+#mc_embed_signup input {border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+#mc_embed_signup input[type=checkbox]{-webkit-appearance:checkbox;}
+#mc_embed_signup input[type=radio]{-webkit-appearance:radio;}
+#mc_embed_signup input:focus {border-color:#333;}
+#mc_embed_signup .button {clear:both; background-color: #111; border: 0 none; border-radius:4px; transition: all 0.23s ease-in-out 0s; color: #FFFFFF; cursor: pointer; display: inline-block; font-size:15px; font-weight: normal; height: 32px; line-height: 32px; margin: 0 5px 10px 0; padding: 0 22px; text-align: center; text-decoration: none; vertical-align: top; white-space: nowrap; width: fit-content; width: -moz-fit-content;}
+#mc_embed_signup .button:hover {background-color:#222;}
+#mc_embed_signup .small-meta {font-size: 11px;}
+#mc_embed_signup .nowrap {white-space:nowrap;}
+
+#mc_embed_signup .mc-field-group {clear:left; position:relative; width:96%; padding-bottom:3%; min-height:50px; display:grid;}
+#mc_embed_signup .size1of2 {clear:none; float:left; display:inline-block; width:46%; margin-right:4%;}
+* html #mc_embed_signup .size1of2 {margin-right:2%; /* Fix for IE6 double margins. */}
+#mc_embed_signup .mc-field-group label {display:block; margin-bottom:3px;}
+#mc_embed_signup .mc-field-group input {display:block; width:100%; padding:8px 0; text-indent:2%;}
+#mc_embed_signup .mc-field-group select {display:inline-block; width:99%; padding:5px 0; margin-bottom:2px;}
+#mc_embed_signup .mc-address-fields-group {display:flex; flex-direction:row; justify-content:space-evenly; width:96%; gap:15px;}
+#mc_embed_signup .mc-sms-phone-group {display:flex; flex-direction:row; justify-content:space-evenly; width:96%; gap:15px; padding-top:5px;}
+
+#mc_embed_signup .datefield, #mc_embed_signup .phonefield-us{padding:5px 0;}
+#mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input{display:inline; width:60px; margin:0 2px; letter-spacing:1px; text-align:center; padding:5px 0 2px 0;}
+#mc_embed_signup .phonefield-us .phonearea input, #mc_embed_signup .phonefield-us .phonedetail1 input{width:40px;}
+#mc_embed_signup .datefield .monthfield input, #mc_embed_signup .datefield .dayfield input{width:30px;}
+#mc_embed_signup .datefield label, #mc_embed_signup .phonefield-us label{display:none;}
+
+#mc_embed_signup .indicates-required {text-align:right; font-size:11px; margin-right:4%;}
+#mc_embed_signup .asterisk {color:#e85c41; font-size:150%; font-weight:normal; position:relative; top:5px;}     
+#mc_embed_signup .clear {clear:both;}
+#mc_embed_signup .foot {display:grid; grid-template-columns: 3fr 1fr; width:96%; align-items: center;}
+@media screen and (max-width:400px) {#mc_embed_signup .foot {display:grid; grid-template-columns: 1fr; width:100%; align-items: center;}}
+
+@media screen and (max-width:400px) {#mc_embed_signup .referralBadge {width:50%;}}
+
+#mc_embed_signup .brandingLogo {justify-self:right;}
+@media screen and (max-width:400px) {#mc_embed_signup .brandingLogo {justify-self:left;}}
+
+#mc_embed_signup .mc-field-group.input-group ul {margin:0; padding:5px 0; list-style:none;}
+#mc_embed_signup .mc-field-group.input-group ul li {display:block; padding:3px 0; margin:0;}
+#mc_embed_signup .mc-field-group.input-group label {display:inline;}
+#mc_embed_signup .mc-field-group.input-group input {display:inline; width:auto; border:none;}
+
+#mc_embed_signup div#mce-responses {float:left; top:-1.4em; padding:0em .5em 0em .5em; overflow:hidden; width:90%; margin: 0 5%; clear: both;}
+#mc_embed_signup div.response {margin:1em 0; padding:1em .5em .5em 0; font-weight:bold; float:left; top:-1.5em; z-index:1; width:80%;}
+#mc_embed_signup #mce-error-response {display:none;}
+#mc_embed_signup #mce-success-response {color:#529214; display:none;}
+#mc_embed_signup label.error {display:block; float:none; width:auto; margin-left:1.05em; text-align:left; padding:.5em 0;}
+#mc_embed_signup .helper_text {color: #8d8985; margin-top: 2px; display: inline-block; padding: 3px; background-color: rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size: 14px; font-weight: normal; z-index: 1;}
+
+#mc-embedded-subscribe {clear:both; width:auto; display:block; margin:1em 0 1em 5%;}
+#mc_embed_signup #num-subscribers {font-size:1.1em;}
+#mc_embed_signup #num-subscribers span {padding:.5em; border:1px solid #ccc; margin-right:.5em; font-weight:bold;}
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {display:inline-block; margin:2px 0 1em 0; padding:3px; background-color:rgba(255,255,255,0.85); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; font-size:14px; font-weight:normal; z-index:1; color:#e85c41;}
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {border:2px solid #e85c41;}
+
+#mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
