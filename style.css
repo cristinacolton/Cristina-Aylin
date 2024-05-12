@@ -63,6 +63,23 @@ p {
     position: relative;
 }
 
+.homepage {
+  position: relative;
+  z-index: 1; /* Lower z-index so it's underneath other elements */
+}
+.background-container {
+  background: url('images/spin.jpg') no-repeat center center/cover;
+  position: relative;
+  padding-top: 60px;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100vh - 60px); /* Subtract the height of the navbar */
+}
 
 
 /* NAVBAR STYLING STARTS */
@@ -77,7 +94,7 @@ p {
       position: -webkit-sticky;
       top: 0;
       /* in front of all other elements */
-      z-index: 99;
+      z-index: 9000;
       /* set background */
       background-color: #e4dbd2;
       padding: 5px 5%;
@@ -210,12 +227,6 @@ display: block;
 position: relative;
   }
 
-.centered {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 
 /* Blog Stying Starts Here */
@@ -279,41 +290,34 @@ position: relative;
     }
   }
 
+  /* homepage styling */
+
 
 /* Video Stying Starts Here */
 
 .video-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    padding-top: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: column;
 }
 
-@media screen and (max-width: 560px) {
-    .video-container {
-        position: relative;
-        top: 50%;
-    }
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-    .think-us-through, .gotta-choose-me {
-        position: relative; 
-        padding-bottom: 56.25%; 
-        padding-top: 30px; 
-        height: 0; 
-        overflow: hidden; 
-    }
-    
-    .think-us-through iframe, .gotta-choose-me iframe, 
-    .gotta-choose-me object, .think-us-through object, 
-    .gotta-choose-me embed, .think-us-through embed { 
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-    }
-
+@media screen and (max-width: 500px) {
+  .video-container {
+      height: auto; /* Allow the video to resize correctly */
   }
+}
 
 /* Photo Gallery Starts Here */
   .header {
@@ -361,11 +365,6 @@ position: relative;
     }
   }
 
-  @media screen and (max-width: 800 px) {
-    .spotifybox {
-      margin-top: 60%;
-    }
-  }
 
 
   /* Footer styling */
@@ -377,6 +376,7 @@ position: relative;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 900000;
 }
 
 .social-links {
